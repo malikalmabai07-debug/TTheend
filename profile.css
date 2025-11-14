@@ -1,0 +1,593 @@
+body {
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(180deg, #0b0b0b, #1a1a1a);
+  color: #fff;
+  font-family: "Segoe UI", sans-serif;
+  background-image: url("images/main_page.webp");
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+/* ===== HEADER ===== */
+/* ===== FIXED, MODERN HEADER ===== */
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: rgba(10, 10, 10, 0.92);
+  backdrop-filter: blur(8px);
+  border-bottom: 2px solid #FFD700;
+  box-shadow: 0 4px 20px rgba(255, 215, 0, 0.1);
+  padding: 12px 60px;
+  transition: all 0.3s ease;
+}
+
+
+.logo {
+  display: flex;
+  align-items: center;  /* Центрируем по вертикали */
+  justify-content: flex-start; /* Выравниваем логотип слева */
+  gap: 10px; /* Расстояние между изображением и текстом */
+  width: auto;
+}
+
+.logo img {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  border: 2px solid #FFD700;
+  box-shadow: 0 0 10px rgba(255, 215, 0, 0.3);
+}
+
+.logo span {
+  font-size: 26px;
+  font-weight: bold;
+  color: #FFD700;
+  letter-spacing: 1px;
+
+}
+.logo a {
+  display: flex; /* Ссылка должна вести себя как блок, не меняя положение */
+  align-items: center;  /* Центрируем логотип внутри ссылки */
+  justify-content: center; /* Содержимое по центру */
+  text-decoration: none; /* Убираем подчеркивание ссылки */
+}
+
+
+/* ===== RESPONSIVE HEADER ===== */
+@media (max-width: 768px) {
+  header {
+    flex-direction: column;
+    align-items: stretch;
+    padding: 15px 20px;
+  }
+
+  .logo span {
+    font-size: 22px;
+  }
+
+  nav ul {
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+
+  nav ul li a {
+    font-size: 15px;
+    padding: 12px;
+  }
+}
+
+
+
+/* Адаптация для мобильных устройств */
+@media (max-width: 768px) {
+  .cart-container {
+    margin: 150px 20px;
+    padding: 15px 10px;
+  }
+
+  .cart-container h1 {
+    font-size: 22px;
+  }
+
+  .checkout-btn {
+    font-size: 16px;
+    padding: 10px 20px;
+  }
+}
+
+/* Адаптация для планшетов */
+@media (min-width: 768px) and (max-width: 1024px) {
+  .cart-container {
+    margin: 140px auto;
+    width: 90%;
+    padding: 20px;
+  }
+}
+
+
+nav ul {
+  display: flex;
+  gap: 25px;
+  list-style: none;
+  margin: 0;
+}
+
+nav a {
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+nav a:hover,
+nav a.active {
+  color: #FFD700;
+}
+
+/* ===== PROFILE LAYOUT ===== */
+.profile-container {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 30px;
+  max-width: 1100px;
+  margin: 120px auto 80px;
+  padding: 0 20px;
+}
+
+/* ===== LEFT SIDE ===== */
+.profile-left {
+  flex: 2;
+  background: rgba(20, 20, 20, 0.9);
+  border: 1px solid #FFD700;
+  border-radius: 15px;
+  padding: 30px;
+  box-shadow: 0 0 25px rgba(255, 215, 0, 0.15);
+}
+
+.user-info {
+  text-align: center;
+  margin-bottom: 25px;
+}
+
+.profile-avatar {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  border: 2px solid #FFD700;
+  margin-bottom: 10px;
+  box-shadow: 0 0 10px rgba(255, 215, 0, 0.4);
+}
+
+.user-info h2 {
+  color: #FFD700;
+  margin-bottom: 8px;
+}
+
+.user-info p {
+  color: #ffef9a;
+  margin-bottom: 15px;
+}
+
+.logout-btn {
+  background-color: #FFD700;
+  color: black;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 20px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.logout-btn:hover {
+  background-color: #e6b800;
+  transform: scale(1.05);
+}
+
+/* ===== PURCHASE HISTORY ===== */
+.purchase-history {
+  margin-top: 20px;
+}
+
+.purchase-history h3 {
+  color: #FFD700;
+  border-bottom: 1px solid #FFD700;
+  padding-bottom: 10px;
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+.purchase-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(30, 30, 30, 0.8);
+  border: 1px solid #FFD700;
+  border-radius: 10px;
+  padding: 12px 15px;
+  margin-bottom: 12px;
+  transition: 0.3s;
+}
+
+.purchase-item:hover {
+  transform: scale(1.02);
+  box-shadow: 0 0 15px rgba(255, 215, 0, 0.25);
+}
+
+.purchase-item img {
+  width: 80px;
+  height: 80px;
+  border-radius: 10px;
+  margin-right: 20px;
+}
+
+.clear-history-btn {
+  background-color: #FFD700;
+  color: black;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 20px;
+  font-weight: bold;
+  cursor: pointer;
+  display: block;
+  margin: 15px auto 0;
+  transition: 0.3s;
+}
+
+.clear-history-btn:hover {
+  background-color: #e6b800;
+  transform: scale(1.05);
+}
+
+/* ===== RIGHT SIDE ===== */
+.profile-right {
+  flex: 1;
+  background: rgba(10, 10, 10, 0.95);
+  border: 1px solid #FFD700;
+  border-radius: 15px;
+  padding: 25px;
+  text-align: center;
+  box-shadow: 0 0 25px rgba(255, 215, 0, 0.15);
+}
+
+.level-title {
+  color: #FFD700;
+  margin-bottom: 8px;
+  font-size: 18px;
+}
+
+.level-circle {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  background-color: #FFD700;
+  color: black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 15px;
+  font-size: 24px;
+  font-weight: bold;
+  box-shadow: 0 0 15px rgba(255, 215, 0, 0.3);
+}
+
+.edit-profile-btn {
+  background-color: #FFD700;
+  color: black;
+  border: none;
+  border-radius: 8px;
+  padding: 8px 18px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.edit-profile-btn:hover {
+  background-color: #e6b800;
+  transform: scale(1.05);
+}
+
+.stats {
+  margin-top: 25px;
+}
+
+.stats h4 {
+  color: #FFD700;
+  margin-bottom: 10px;
+}
+
+.stats p {
+  color: #ffef9a;
+  margin: 6px 0;
+}
+
+/* ===== FOOTER ===== */
+footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.9);
+  border-top: 2px solid #FFD700;
+  color: white;
+  text-align: center;
+  padding: 15px 0;
+}
+
+
+
+
+/* Стили для покупок в профиле */
+.purchase-item {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  background: rgba(30, 30, 30, 0.8);
+  border: 1px solid #FFD700;
+  border-radius: 10px;
+  padding: 15px 20px;
+  margin-bottom: 15px;
+  transition: 0.3s;
+}
+
+/* При наведении — эффект */
+.purchase-item:hover {
+  transform: scale(1.02);
+  box-shadow: 0 0 15px rgba(255, 215, 0, 0.25);
+}
+
+/* Стиль для изображения игры */
+.purchase-item img {
+  width: 80px;
+  height: 80px;
+  border-radius: 10px;
+  margin-right: 20px;
+}
+
+/* Стиль для названия игры */
+.purchase-item h4 {
+  font-size: 18px;
+  color: #FFD700; /* Золотой цвет */
+  margin-bottom: 5px;
+}
+
+/* Стиль для цены */
+.purchase-item p {
+  font-size: 16px;
+  color: #ffef9a; /* Светлый цвет для текста */
+  margin-bottom: 0;
+}
+
+/* Стили для кнопки очистки истории покупок */
+.clear-history-btn {
+  background-color: #FFD700;
+  color: black;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 20px;
+  font-weight: bold;
+  cursor: pointer;
+  display: block;
+  margin: 20px auto 0;
+  transition: 0.3s;
+}
+
+.clear-history-btn:hover {
+  background-color: #e6b800;
+  transform: scale(1.05);
+}
+
+nav {
+  position: fixed;
+  background-color: #222; /* Тёмный фон для Navbar */
+  border-bottom: 2px solid #FFD700; /* Добавим золотую границу снизу */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Тень для эффекта */
+  padding: 15px 0; /* Отступы сверху и снизу */
+  
+}
+
+nav .navbar-toggler {
+  background-color: #FFD700; /* Цвет гамбургер-меню */
+}
+nav .navbar-toggler-icon {
+  background-color: #222; /* Цвет иконки гамбургера */
+}
+
+nav ul {
+  padding-left: 0;
+  list-style: none;
+  display: flex;
+  gap: 30px;
+  margin-left: auto;
+}
+
+nav a {
+  text-decoration: none;
+  color: white;
+  font-size: 18px;
+  transition: 0.3s;
+}
+nav ul li a {
+  color: #FFFFFF;
+  font-size: 18px;
+  font-weight: bold;
+  text-transform: uppercase;
+  text-decoration: none;
+  padding: 8px 16px; 
+  transition: all 0.3s ease; 
+}
+
+/* Для мобильных устройств (до 768px) */
+@media (max-width: 768px) {
+  .profile-container {
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    margin: 120px auto 80px;
+  }
+
+  .profile-left, .profile-right {
+    flex: none;
+    width: 100%;
+    margin-bottom: 30px;
+  }
+
+  .profile-left {
+    padding: 15px;
+  }
+
+  .purchase-item {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .purchase-item img {
+    margin-right: 0;
+    margin-bottom: 10px;
+  }
+
+  .theme-toggle {
+    margin-top: 30px;
+    align-self: center;
+  }
+
+  /* Уменьшаем шрифт и padding для мобильных */
+  nav a {
+    font-size: 16px;
+  }
+
+  .level-circle {
+    font-size: 20px;
+    width: 60px;
+    height: 60px;
+  }
+
+  .theme-btn {
+    font-size: 12px;
+    padding: 5px 10px;
+  }
+
+  .stats h4 {
+    font-size: 16px;
+  }
+  
+}
+
+/* Для планшетов (с 768px до 1024px) */
+@media (min-width: 768px) and (max-width: 1024px) {
+  .profile-container {
+    flex-direction: column;
+  }
+
+  .profile-left, .profile-right {
+    width: 100%;
+  }
+
+  .profile-left {
+    padding: 20px;
+  }
+
+  .theme-btn {
+    font-size: 13px;
+  }
+
+  .theme-toggle {
+    margin-top: 25px;
+  }
+  
+}
+
+/* ===== Кнопка смены темы ===== */
+.theme-toggle {
+  margin-top: 20px;  /* Отступ сверху */
+  align-self: center;
+  z-index: 10;
+}
+
+/* Стили для кнопки смены темы */
+.theme-btn {
+  background: linear-gradient(135deg, #c9a227, #f5d76e);
+  color: #111;
+  border: none;
+  font-weight: 600;
+  padding: 7px 16px;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 14px;
+}
+
+.theme-btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 10px rgba(255, 231, 95, 0.6);
+}
+
+/* ============================================================
+   СВЕТЛАЯ ТЕМА
+============================================================ */
+.light-theme {
+  background-color: #ffffff !important; /* Убираем полупрозрачность */
+  color: #1a1a1a;  /* Цвет текста */
+  background-image: none !important;  /* Убираем фоновое изображение */
+  background-size: cover;  /* Убираем обтягивание фона */
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+
+
+/* ===== Header для светлой темы ===== */
+.light-theme header {
+  background-color: #ececec;
+  color: #111;
+  border-bottom: 3.3px solid #FFD700;
+}
+/* ===== Логотип для светлой темы ===== */
+.light-theme .logo span {
+  color: #000000;  /* золотисто-коричневый для контраста */
+}
+/* ===== Светлая тема: навигация ===== */
+.light-theme nav {
+  border-bottom: 3px solid #FFD700;  /* увеличиваем толщину жёлтой линии до 5px */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  padding: 7px 0;
+}
+.light-theme footer {
+  background-color: #ececec;
+  color: #111;
+  border-bottom: 3.3px solid #FFD700;
+}
+/* ===== Настройки для футера ===== */
+.light-theme footer {
+  background-color: #f0f0f0;
+  color: #111;
+  border-top: 3.3px solid #FFD700;
+}
+/* Навигация */
+.light-theme .navbar-dark {
+  background-color: #d0d0d0 !important;
+}
+.light-theme .nav-link {
+  color: #333 !important;
+  font-weight: 600;
+}
+.light-theme .nav-link:hover {
+  color: #000000 !important;
+}
+
+/* Кнопка темы */
+.light-theme .theme-btn {
+  background: linear-gradient(135deg, #14005b, #000000);
+  color: #ffffff;
+}
+.light-theme .theme-btn:hover {
+  box-shadow: 0 0 10px rgba(180, 138, 31, 0.6);
+}

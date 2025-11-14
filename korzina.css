@@ -1,0 +1,282 @@
+/* ===== FIXED, MODERN HEADER ===== */
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: rgba(10, 10, 10, 0.92);
+  backdrop-filter: blur(8px);
+  border-bottom: 2px solid #FFD700;
+  box-shadow: 0 4px 20px rgba(255, 215, 0, 0.1);
+  padding: 12px 60px;
+  transition: all 0.3s ease;
+}
+
+/* При прокрутке — чуть затемняется */
+header.scrolled {
+  background: rgba(0, 0, 0, 0.95);
+  box-shadow: 0 0 25px rgba(255, 215, 0, 0.25);
+}
+
+/* ===== LOGO ===== */
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 5px;
+}
+
+.logo img {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  border: 2px solid #FFD700;
+  box-shadow: 0 0 10px rgba(255, 215, 0, 0.3);
+}
+
+.logo span {
+  font-size: 26px;
+  font-weight: bold;
+  color: #FFD700;
+  letter-spacing: 1px;
+
+}
+
+  .logo span {
+    font-size: 22px;
+  }
+
+  nav ul {
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+
+  nav ul li a {
+    font-size: 15px;
+    padding: 12px;
+  }
+
+
+
+/* ===== BODY OFFSET ===== */
+body {
+  margin: 0;
+  padding-top: 90px;
+  background: url("images/main_page.webp") center/cover no-repeat fixed;
+  background-color: #0b0b0b;
+  color: white;
+  font-family: "NDAstroneer", sans-serif;
+}
+nav {
+  position: fixed;
+  background-color: #222; /* Тёмный фон для Navbar */
+  border-bottom: 2px solid #FFD700; /* Добавим золотую границу снизу */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Тень для эффекта */
+  padding: 15px 0; /* Отступы сверху и снизу */
+  
+}
+
+/* ===== CART SECTION ===== */
+.cart-container {
+  margin: 50px auto;
+  padding: 20px;
+  width: 90%;
+  max-width: 1200px;
+  background-color: rgba(20, 20, 20, 0.9);
+  border-radius: 15px;
+  box-shadow: 0 0 25px rgba(0, 0, 0, 0.5);
+  text-align: center;
+}
+
+.cart-container h1 {
+  color: #FFD700;
+  font-size: 32px;
+  margin-bottom: 20px;
+}
+
+.checkout-btn {
+  background-color: #FFD700;
+  color: #000;
+  padding: 12px 30px;
+  font-size: 18px;
+  font-weight: bold;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s ease;
+  text-align: center;
+}
+
+.checkout-btn:hover {
+  background-color: #e6b800;
+  transform: scale(1.05);
+  box-shadow: 0 0 12px rgba(255, 215, 0, 0.5);
+}
+
+/* Для мобильных устройств (до 768px) */
+@media (max-width: 768px) {
+
+  /* Уменьшаем шрифт и padding для мобильных */
+  nav a {
+    font-size: 16px;
+    
+  }
+
+  .level-circle {
+    font-size: 20px;
+    width: 60px;
+    height: 60px;
+  }
+
+  .theme-btn {
+    font-size: 12px;
+    padding: 5px 10px;
+  }
+
+  .stats h4 {
+    font-size: 16px;
+  }
+  /* Уменьшаем ширину панели навигации */
+.navbar-collapse {
+  width: 30px;  /* Уменьшаем ширину панели */
+  
+}
+}
+
+/* Адаптация для планшетов */
+@media (min-width: 768px) and (max-width: 1024px) {
+  .cart-container {
+    margin: 140px auto;
+    width: 90%;
+    padding: 20px;
+  }
+}
+
+/* Стиль для карт товаров в корзине */
+.cart-item {
+  display: flex;
+  align-items: center;
+  margin: 20px 0;
+  background-color: rgba(30, 30, 30, 0.8);
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+.cart-item .cart-item-info {
+  flex: 1;
+  text-align: left;
+  padding-left: 15px;
+}
+
+.cart-item .cart-item-info h3 {
+  font-size: 18px;
+  color: #FFD700;
+}
+
+.cart-item .cart-item-info p {
+  color: #ccc;
+}
+
+/* Размеры изображений в корзине */
+.cart-item img {
+  width: 70px;
+  height: 70px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-right: 15px;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.3);
+}
+
+@media (max-width: 768px) {
+  .cart-item img {
+    width: 60px;
+    height: 60px;
+  }
+}
+/* Изменяем позиционирование кнопки гамбургера */
+ nav .navbar-toggler {
+  background-color: #FFD700; /* Желтый фон для кнопки гамбургера */
+    
+}
+
+nav  .navbar-toggler-icon {
+  background-color: #222;
+
+}
+
+/* При добавлении класса ms-auto */
+.navbar-nav {
+  margin-left: auto;
+}
+
+
+@media (max-width: 768px) {
+  /* Размещение гамбургера справа */
+  .navbar-toggler {
+    margin-left: auto;
+  }
+}
+
+
+.navbar-toggler.ms-auto {
+  margin-left: auto;  /* Это выровняет гамбургер в правую часть */
+}
+
+/* Стиль для кнопки "Удалить" в корзине */
+.remove-btn {
+  background-color: #FFD700; /* Желтый фон для кнопки "Удалить" */
+  color: black;              /* Черный текст */
+  padding: 6px 12px;         /* Отступы */
+  border-radius: 6px;        /* Округление углов */
+  font-weight: bold;         /* Жирный шрифт */
+  font-size: 14px;           /* Размер шрифта */
+  border: none;              /* Без границ */
+  cursor: pointer;           /* Курсор указатель */
+  transition: all 0.3s ease; /* Плавные переходы */
+}
+
+.remove-btn:hover {
+  background-color: #e6b800; /* Подсветка при наведении */
+  transform: scale(1.05);     /* Легкое увеличение кнопки */
+  box-shadow: 0 0 8px rgba(255, 215, 0, 0.7); /* Тень при наведении */
+}
+
+
+/* Размеры изображений в корзине */
+.cart-item img {
+  width: 70px;         /* Устанавливаем фиксированную ширину */
+  height: 70px;        /* Устанавливаем фиксированную высоту */
+  object-fit: cover;   /* Сохраняем пропорции и обрезаем изображение */
+  border-radius: 8px;  /* Округляем углы изображения */
+  margin-right: 15px;  /* Добавляем отступ справа */
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.3); /* Тень для изображения */
+}
+
+/* Кнопка "Оформить заказ" */
+.checkout-btn {
+  background-color: #FFD700; /* Желтый фон */
+  color: #000;               /* Черный текст */
+  padding: 12px 30px;        /* Отступы */
+  font-size: 18px;           /* Размер шрифта */
+  font-weight: bold;         /* Жирный шрифт */
+  border: none;              /* Без границ */
+  border-radius: 8px;        /* Округление углов */
+  cursor: pointer;           /* Курсор указатель */
+  transition: 0.3s ease;      /* Плавные переходы */
+  text-align: center;        /* Выравнивание текста по центру */
+}
+
+.checkout-btn:hover {
+  background-color: #e6b800; /* Подсветка при наведении */
+  transform: scale(1.05);     /* Легкое увеличение кнопки */
+  box-shadow: 0 0 12px rgba(255, 215, 0, 0.5); /* Тень */
+}
+
+
+
